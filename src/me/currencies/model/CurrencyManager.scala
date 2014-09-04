@@ -35,7 +35,6 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean) extends CurrencyC
         Thread.sleep(5000);
         updateCurrencyXmlFile(url);
         updateLocalCurrencies();
-        println("test")
       }
     }
   }).start();

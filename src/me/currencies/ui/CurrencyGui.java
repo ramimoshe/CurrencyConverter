@@ -49,7 +49,7 @@ public class CurrencyGui extends JFrame {
         addAmountPanel();
         addResultPanel();
 
-        addRatesTab(tabbedPane);
+        addRatesTab();
     }
 
     private void addMainWindow() {
@@ -79,12 +79,12 @@ public class CurrencyGui extends JFrame {
 
     private void addConverterTab() {
         converterTab = new JPanel();
-        tabbedPane.addTab("Converter", null, converterTab, null);
         converterTab.setLayout(new BorderLayout(0, 0));
-
         centerConverterPanel = new JPanel();
         centerConverterPanel.setLayout(new GridLayout(4, 1, 0, 0));
         converterTab.add(centerConverterPanel, BorderLayout.CENTER);
+
+        tabbedPane.addTab("Converter", null, converterTab, null);
     }
 
     private void addHeadConverterPanel() {
@@ -166,7 +166,7 @@ public class CurrencyGui extends JFrame {
         centerConverterPanel.add(amountPanel);
     }
 
-    private void addRatesTab(JTabbedPane tabbedPane) {
+    private void addRatesTab() {
         ratesTab = new JPanel();
         ratesTab.setLayout(new BorderLayout(0, 0));
         JPanel headPanelRates = new JPanel();
