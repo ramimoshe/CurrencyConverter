@@ -8,7 +8,7 @@ import org.xml.sax.SAXParseException
 
 import scala.collection.Map
 import scala.io.Source.fromURL
-import scala.xml.XML;
+import scala.xml.XML
 
 /**
  * * <pre> Currency Manager - manage all currencies data and contains conversions functions <pre/>
@@ -23,7 +23,7 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
   private var lastUpdate: String = ""
 
   //adding NIS to Currency map
-  currencies += (("NIS") -> new Currency("Shekel", 1, "NIS", "ISR", 1, 1))
+  currencies += ("NIS" -> new Currency("Shekel", 1, "NIS", "ISR", 1, 1))
 
   //update local currency file
   updateCurrencyXmlFile(url)
@@ -43,7 +43,7 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
   }).start()
 
   //---------------------
-  //function Defenition
+  //functions Definitions
   //---------------------
 
 
@@ -54,7 +54,7 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
    */
   def updateCurrencyXmlFile(url: String): Unit = {
 
-    if (autoSyncData == false)
+    if (!autoSyncData)
       return
     //get request
     try {
@@ -66,15 +66,12 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
       writer.write(result)
       writer.close()
     } catch {
-      case ex: FileNotFoundException => {
+      case ex: FileNotFoundException =>
         logger.application.warn("External site not found")
-      }
-      case ex: IOException => {
+      case ex: IOException =>
         logger.application.warn("IO Exception")
-      }
-      case ex: SAXParseException => {
+      case ex: SAXParseException =>
         logger.application.error("Bad Parsing")
-      }
     }
   }
 
@@ -89,10 +86,9 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
     try {
       currencies(from).m_unit * currencies(from).m_rate / currencies(to).m_unit / currencies(to).m_rate * amount
     } catch {
-      case ex: NoSuchElementException => {
+      case ex: NoSuchElementException =>
         logger.application.error("Bad Input")
         throw new IllegalArgumentException("Bad Input")
-      }
     }
   }
 
@@ -102,7 +98,7 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
   def updateLocalCurrencies() = {
     logger.application.info("Update local memory for currencies")
 
-    val xml = XML.loadFile("CURRENCIES.XML");
+    val xml = XML.loadFile("CURRENCIES.XML")
     val currenciesRaw = (xml \ "CURRENCY").toArray
 
     currencies = Map[String, Currency]()
@@ -111,14 +107,14 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
     // loop on all records and insert the data to the currencies map variable
     for (item <- currenciesRaw) {
       var currency = new Currency(
-        ((item) \ "NAME").text,
-        ((item) \ "UNIT").text.toInt,
-        ((item) \ "CURRENCYCODE").text,
-        ((item) \ "COUNTRY").text,
-        ((item) \ "RATE").text.toDouble,
-        ((item) \ "CHANGE").text.toDouble
+        (item \ "NAME").text,
+        (item \ "UNIT").text.toInt,
+        (item \ "CURRENCYCODE").text,
+        (item \ "COUNTRY").text,
+        (item \ "RATE").text.toDouble,
+        (item \ "CHANGE").text.toDouble
       )
-      currencies += (((item \ "CURRENCYCODE").text) -> currency)
+      currencies += ((item \ "CURRENCYCODE").text -> currency)
     }
   }
 
