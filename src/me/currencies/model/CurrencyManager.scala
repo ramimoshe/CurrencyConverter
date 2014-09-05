@@ -12,7 +12,7 @@ import scala.collection.Map
 import scala.io.Source.fromURL
 import scala.xml.XML;
 
-class CurrencyManager(logger:LogHelper, autoSyncData: Boolean) extends CurrencyController {
+class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: String) extends CurrencyController {
   //defining variables
   private final val url: String = "http://www.boi.org.il/currency.xml"
   private var currencies: Map[String, Currency] = Map[String, Currency]()
@@ -54,7 +54,7 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean) extends CurrencyC
       val result = fromURL(url).mkString;
 
       //overwrite Currencies file
-      val writer = new PrintWriter(new File("CURRENCIES.xml"))
+      val writer = new PrintWriter(new File(localFilePath))
       writer.write(result)
       writer.close()
     } catch {

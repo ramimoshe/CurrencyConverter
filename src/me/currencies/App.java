@@ -12,7 +12,7 @@ public class App {
     public static void main(String[] args) {
 
         final LogHelper logger = new LogHelper();
-        final CurrencyController cm = new CurrencyManager(logger, true);
+        final CurrencyController cm = new CurrencyManager(logger, true, "CURRENCIES.xml");
 
 
         EventQueue.invokeLater(new Runnable() {

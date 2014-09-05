@@ -38,6 +38,7 @@ public class CurrencyGui extends JFrame {
         this.cm = cm;
 
         addMainWindow();
+
         addTabbedPanel();
 
         addConverterTab();
@@ -50,7 +51,9 @@ public class CurrencyGui extends JFrame {
 
         addRatesTab();
     }
-
+    /**
+    *   Configures the main Jframe and adds a content panel to the main Jframe
+    */
     private void addMainWindow() {
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,11 +62,13 @@ public class CurrencyGui extends JFrame {
         contentPane.setLayout(new BorderLayout(0, 0));
         setContentPane(contentPane);
     }
-
+    /**
+     *   Configures the main Jframe and adds a content panel to the main Jframe
+     */
     private void addTabbedPanel() {
         tabbedPane = new JTabbedPane(JTabbedPane.TOP);
         contentPane.add(tabbedPane, BorderLayout.CENTER);
-
+        // Listener event for refreshing the table every time the table paned is selected
         tabbedPane.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {

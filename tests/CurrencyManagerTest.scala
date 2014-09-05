@@ -11,9 +11,9 @@ import org.junit.Test
 class CurrencyManagerTest {
   @Test def convert_UsdToEur_Success {
 
-    val expectedResult = 3.8345430021195965;
+    val expectedResult = 3.8653660628148776
     val logger: LogHelper = new LogHelper
-    val cm: CurrencyController = new CurrencyManager(logger, false)
+    val cm: CurrencyController = new CurrencyManager(logger, false, "CURRENCIES_TEST.xml")
     val result: Double = cm.convert(5, "USD", "EUR")
 
     assertEquals(expectedResult, result, 0)
