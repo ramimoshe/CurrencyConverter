@@ -16,7 +16,7 @@ import scala.xml.XML
  * @param autoSyncData indicates whether to start sync data from server automatically or not
  * @param localFilePath full path or relative path to save currency data
  */
-class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: String) extends CurrencyController {
+class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: String) extends CurrencyController {
   //defining variables
   private final val url: String = "http://www.boi.org.il/currency.xml"
   private var currencies: Map[String, Currency] = Map[String, Currency]()
@@ -40,7 +40,7 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
   }).start()
 
   //---------------------
-  //function Defenition
+  //function Definition
   //---------------------
 
   //update local currency file
@@ -80,6 +80,7 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
    */
   def convert(amount: Double, from: String, to: String): Double = {
     try {
+      currencies("aaa")
       currencies(from).m_unit * currencies(from).m_rate / currencies(to).m_unit / currencies(to).m_rate * amount
     } catch {
       case ex: NoSuchElementException =>
@@ -104,7 +105,7 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
     lastUpdate = (xml \ "LAST_UPDATE").text
     // loop on all records and insert the data to the currencies map variable
     for (item <- currenciesRaw) {
-      var currency = new Currency(
+      val currency = new Currency(
         (item \ "NAME").text,
         (item \ "UNIT").text.toInt,
         (item \ "CURRENCYCODE").text,
