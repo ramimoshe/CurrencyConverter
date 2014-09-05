@@ -14,7 +14,6 @@ import java.awt.event.ActionEvent;
 import javax.swing.event.*;
 import java.lang.Double;
 
-
 public class CurrencyGui extends JFrame {
 
     private JPanel contentPane;
@@ -23,17 +22,17 @@ public class CurrencyGui extends JFrame {
     private JPanel ratesTab;
 
     private JPanel centerConverterPanel;
-    private JTextField amountTf;
+    private JTextField amountTextField;
     private CurrencyController cm;
     private JPanel toPanel;
     private JPanel fromPanel;
     private JComboBox fromComboBox;
     private JComboBox toComboBox;
-    private JLabel resultLbl;
+    private JLabel resultLabel;
     private JPanel resultPanel;
 
     private JLabel lastUpdatedTableLbl;
-    private JTable table;
+    private JTable currenciesTable;
 
     public CurrencyGui(CurrencyController cm) {
         this.cm = cm;
@@ -53,6 +52,7 @@ public class CurrencyGui extends JFrame {
     }
 
     private void addMainWindow() {
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
         contentPane = new JPanel();
@@ -71,7 +71,7 @@ public class CurrencyGui extends JFrame {
                 int indexTabSelected = sourceTabbedPane.getSelectedIndex();
                 if (indexTabSelected == 1 ) {
                     lastUpdatedTableLbl.setText(cm.getLastUpdate());
-                    fillTableData(table.getModel());
+                    fillTableData(currenciesTable.getModel());
                 }
             }
         });
@@ -102,15 +102,14 @@ public class CurrencyGui extends JFrame {
         JButton convertBtn = new JButton("Convert");
         convertBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
                 String from = fromComboBox.getSelectedItem().toString();
                 String to = toComboBox.getSelectedItem().toString();
                 try {
-                    double amount = Double.parseDouble(amountTf.getText());
+                    double amount = Double.parseDouble(amountTextField.getText());
                     double result = cm.convert(amount, from, to);
-                    resultLbl.setText(String.format("%1$,.2f", result));
+                    resultLabel.setText(String.format("%1$,.2f", result));
                 } catch (IllegalArgumentException ex) {
-                    resultLbl.setText("Bad input");
+                    resultLabel.setText("Bad input");
                 }
             }
         });
@@ -123,8 +122,8 @@ public class CurrencyGui extends JFrame {
 
         JLabel fromLbl = new JLabel("From:    ");
         fromPanel.add(fromLbl);
-        fromLbl.setVerticalAlignment(SwingConstants.TOP);
-        fromLbl.setHorizontalAlignment(SwingConstants.CENTER);
+        //fromLbl.setVerticalAlignment(SwingConstants.TOP);
+        //fromLbl.setHorizontalAlignment(SwingConstants.CENTER);
 
         fromComboBox = new JComboBox();
         fromComboBox.setModel(new DefaultComboBoxModel(cm.getCurrenciesNames()));
@@ -137,8 +136,8 @@ public class CurrencyGui extends JFrame {
         toPanel = new JPanel();
 
         JLabel toLbl = new JLabel("To:        ");
-        toLbl.setVerticalAlignment(SwingConstants.TOP);
-        toLbl.setHorizontalAlignment(SwingConstants.CENTER);
+        //toLbl.setVerticalAlignment(SwingConstants.TOP);
+        //toLbl.setHorizontalAlignment(SwingConstants.CENTER);
         toPanel.add(toLbl);
 
         toComboBox = new JComboBox();
@@ -150,18 +149,12 @@ public class CurrencyGui extends JFrame {
 
     private void addAmountPanel() {
         JPanel amountPanel = new JPanel();
-        amountPanel.setLayout(new GridLayout(0, 2, 0, 0));
-
         JLabel amountLbl = new JLabel("Amount: ");
-        amountLbl.setHorizontalAlignment(SwingConstants.RIGHT);
         amountPanel.add(amountLbl);
 
-        JPanel amountInputPanel = new JPanel();
-        amountInputPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
-        amountTf = new JTextField();
-        amountTf.setColumns(10);
-        amountInputPanel.add(amountTf);
-        amountPanel.add(amountInputPanel);
+        amountTextField = new JTextField();
+        amountPanel.add(amountTextField);
+        amountTextField.setColumns(10);
 
         centerConverterPanel.add(amountPanel);
     }
@@ -172,9 +165,9 @@ public class CurrencyGui extends JFrame {
         JPanel headPanelRates = new JPanel();
         ratesTab.add(headPanelRates, BorderLayout.NORTH);
 
-        JLabel lblCurrencyRates = new JLabel("Currency Rates");
-        lblCurrencyRates.setFont(new Font("Tahoma", Font.PLAIN, 20));
-        headPanelRates.add(lblCurrencyRates);
+        JLabel currencyRatesHeader = new JLabel("Currency Rates");
+        currencyRatesHeader.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        headPanelRates.add(currencyRatesHeader);
 
         JTable table = createRatesTable();
         JScrollPane scrollPane = new  JScrollPane(table);
@@ -190,12 +183,12 @@ public class CurrencyGui extends JFrame {
     }
 
     private JTable createRatesTable() {
-        table = new JTable();
-        table.setEnabled(false);
-        fillTableHeader(table);
-        fillTableData(table.getModel());
+        currenciesTable = new JTable();
+        currenciesTable.setEnabled(false);
+        fillTableHeader(currenciesTable);
+        fillTableData(currenciesTable.getModel());
 
-        return table;
+        return currenciesTable;
     }
 
     private void fillTableHeader(JTable table) {
@@ -210,7 +203,7 @@ public class CurrencyGui extends JFrame {
     private void fillTableData(TableModel tableModel) {
         DefaultTableModel defaultTableModel = (DefaultTableModel)tableModel;
         int rowCount = defaultTableModel.getRowCount();
-        //Remove rows one by one from the end of the table
+        //Remove rows one by one from the end of the currenciesTable
         for (int i = rowCount - 1; i >= 0; i--) {
             defaultTableModel.removeRow(i);
         }
@@ -223,11 +216,8 @@ public class CurrencyGui extends JFrame {
 
     private void addResultPanel() {
         resultPanel = new JPanel();
-        resultPanel.setLayout(new GridLayout(0, 1, 0, 0));
-        resultLbl = new JLabel("");
-        resultLbl.setVerticalAlignment(SwingConstants.TOP);
-        resultLbl.setHorizontalAlignment(SwingConstants.CENTER);
-        resultPanel.add(resultLbl);
+        resultLabel = new JLabel("");
+        resultPanel.add(resultLabel);
 
         centerConverterPanel.add(resultPanel);
     }
