@@ -22,9 +22,6 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
   private var currencies: Map[String, Currency] = Map[String, Currency]()
   private var lastUpdate: String = ""
 
-  //adding NIS to Currency map
-  currencies += (("NIS") -> new Currency("Shekel", 1, "NIS", "ISR", 1, 1))
-
   //update local currency file
   updateCurrencyXmlFile(url)
 
@@ -45,7 +42,6 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
   //---------------------
   //function Defenition
   //---------------------
-
 
   //update local currency file
   /**
@@ -106,6 +102,8 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
     val currenciesRaw = (xml \ "CURRENCY").toArray
 
     currencies = Map[String, Currency]()
+    //adding NIS to Currency map
+    currencies += (("NIS") -> new Currency("Shekel", 1, "NIS", "Israel", 1, 1))
 
     lastUpdate = (xml \ "LAST_UPDATE").text
     // loop on all records and insert the data to the currencies map variable
