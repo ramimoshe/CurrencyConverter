@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4d2eaf3-8324-4e13-8f17-dfb157cbf852" name="Default" comment="refactor">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CURRENCIES.xml" afterPath="$PROJECT_DIR$/CURRENCIES.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/ui/CurrencyGui.java" afterPath="$PROJECT_DIR$/src/me/currencies/ui/CurrencyGui.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/CurrencyManagerTest.scala" afterPath="$PROJECT_DIR$/tests/CurrencyManagerTest.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Currency.iws" />
@@ -868,7 +865,7 @@
       <workItem from="1409675853028" duration="1395000" />
       <workItem from="1409684043727" duration="8432000" />
       <workItem from="1409907809725" duration="7100000" />
-      <workItem from="1409923970008" duration="1640000" />
+      <workItem from="1409923970008" duration="1653000" />
     </task>
     <task id="LOCAL-00001" summary="remove not needed code from ui">
       <created>1409915950716</created>
@@ -894,11 +891,15 @@
       <created>1409923348160</created>
       <updated>1409923348160</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor">
+      <created>1409925619601</created>
+      <updated>1409925619601</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71183000" />
+    <option name="totallyTimeSpent" value="71196000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
