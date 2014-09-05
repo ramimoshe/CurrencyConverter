@@ -19,8 +19,8 @@ import java.util.Map;
  * this class creates and holds the user interface and has access to currency controller interface
  */
 public class CurrencyGui extends JFrame {
-    // Variable decleration
 
+    // Variable decleration
     private CurrencyController cm;
 
     private JTabbedPane tabbedPane;
@@ -39,13 +39,16 @@ public class CurrencyGui extends JFrame {
     private JPanel headPanelRates;
 
     private JTextField amountTextField;
-    private JComboBox fromComboBox;
-    private JComboBox toComboBox;
+
+    private JComboBox<String> fromComboBox;
+    private JComboBox<String> toComboBox;
+
     private JTable currenciesTable;
+
     private JButton convertBtn;
 
     private JLabel resultLabel;
-    private JLabel lastUpdatedTableLbl;
+    private JLabel lastUpdatedTableLabel;
     private JLabel currencyRatesHeader;
     private JLabel currencyConverterLabel;
     private JLabel amountLbl;
@@ -65,7 +68,7 @@ public class CurrencyGui extends JFrame {
     */
     private void addMainWindow() {
         setResizable(false);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
         contentPane = new JPanel();
         contentPane.setLayout(new BorderLayout(0, 0));
@@ -85,7 +88,7 @@ public class CurrencyGui extends JFrame {
                 JTabbedPane sourceTabbedPane = (JTabbedPane) e.getSource();
                 int indexTabSelected = sourceTabbedPane.getSelectedIndex();
                 if (indexTabSelected == 1 ) {
-                    lastUpdatedTableLbl.setText(cm.getLastUpdate());
+                    lastUpdatedTableLabel.setText(cm.getLastUpdate());
                     fillTableData(currenciesTable.getModel());
                 }
             }
@@ -158,9 +161,9 @@ public class CurrencyGui extends JFrame {
 
         JLabel fromLbl = new JLabel("From:    ");
         fromPanel.add(fromLbl);
-        fromComboBox = new JComboBox();
+        fromComboBox = new JComboBox<String>();
         //adding the currencies types to the combobox
-        fromComboBox.setModel(new DefaultComboBoxModel(cm.getCurrenciesNames()));
+        fromComboBox.setModel(new DefaultComboBoxModel<String>(cm.getCurrenciesNames()));
         fromPanel.add(fromComboBox);
         centerConverterPanel.add(fromPanel);
     }
@@ -173,9 +176,9 @@ public class CurrencyGui extends JFrame {
 
         JLabel toLbl = new JLabel("To:        ");
         toPanel.add(toLbl);
-        toComboBox = new JComboBox();
+        toComboBox = new JComboBox<String>();
         //adding the currencies types to the combobox
-        toComboBox.setModel(new DefaultComboBoxModel(cm.getCurrenciesNames()));
+        toComboBox.setModel(new DefaultComboBoxModel<String>(cm.getCurrenciesNames()));
         toPanel.add(toComboBox);
         centerConverterPanel.add(toPanel);
     }
@@ -227,8 +230,8 @@ public class CurrencyGui extends JFrame {
         lastUpdateDatePanel = new JPanel();
         lastUpdateDatePanel.add(new JLabel("Last Updated: "));
         //gets last update from the controller
-        lastUpdatedTableLbl = new JLabel(cm.getLastUpdate());
-        lastUpdateDatePanel.add(lastUpdatedTableLbl);
+        lastUpdatedTableLabel = new JLabel(cm.getLastUpdate());
+        lastUpdateDatePanel.add(lastUpdatedTableLabel);
         ratesTab.add(lastUpdateDatePanel, BorderLayout.SOUTH);
     }
 
@@ -254,8 +257,8 @@ public class CurrencyGui extends JFrame {
     }
 
     /**
-     *
-     * @param table
+     * sets headers to rates table
+     * @param table the table edited
      */
     private void fillTableHeader(JTable table) {
         table.setModel(new DefaultTableModel(
@@ -267,8 +270,8 @@ public class CurrencyGui extends JFrame {
     }
 
     /**
-     * refills
-     * @param tableModel
+     * refills the rates table
+     * @param tableModel the table edited
      */
     private void fillTableData(TableModel tableModel) {
         DefaultTableModel defaultTableModel = (DefaultTableModel)tableModel;
