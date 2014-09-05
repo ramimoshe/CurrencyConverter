@@ -6,6 +6,8 @@ package me.currencies.model
 
 //imports
 import java.io._
+import java.util.NoSuchElementException
+
 import org.xml.sax.SAXParseException
 
 import scala.collection.Map
@@ -72,7 +74,14 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
 
   //convert coins
   def convert(amount: Double, from: String, to: String): Double = {
-    currencies(from).m_unit * currencies(from).m_rate / currencies(to).m_unit / currencies(to).m_rate * amount;
+    try {
+      currencies(from).m_unit * currencies(from).m_rate / currencies(to).m_unit / currencies(to).m_rate * amount;
+    } catch {
+      case ex: NoSuchElementException => {
+        logger.application.error("Bad Input")
+        throw new BadInputException("Bad Input");
+      }
+    }
   }
 
   //loads local xml file to memory (Map collection)

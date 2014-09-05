@@ -1,8 +1,5 @@
-import me.currencies.model.{CurrencyManager, CurrencyController, LogHelper}
-import org.junit.Assert._
-import org.junit.Assert.assertEquals
 import me.currencies.model._
-import scala.collection.JavaConversions
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 /**
@@ -17,5 +14,14 @@ class CurrencyManagerTest {
     val result: Double = cm.convert(5, "USD", "EUR")
 
     assertEquals(expectedResult, result, 0)
+  }
+
+  @Test(expected = classOf[BadInputException])
+  def convert_UsdToXXX_ThrowBadInputException {
+
+    val logger: LogHelper = new LogHelper
+    val cm: CurrencyController = new CurrencyManager(logger, false, "CURRENCIES_TEST.xml")
+    val result: Double = cm.convert(5, "USD", "XXX")
+
   }
 }
