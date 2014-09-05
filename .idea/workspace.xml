@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4d2eaf3-8324-4e13-8f17-dfb157cbf852" name="Default" comment="Add Tests">
-      <change type="DELETED" beforePath="C:\temp\CurrencyConverter\CurrencyConverter\src\me\currencies\model\BadInputException.scala" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/App.java" afterPath="$PROJECT_DIR$/src/me/currencies/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/model/Currency.scala" afterPath="$PROJECT_DIR$/src/me/currencies/model/Currency.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/model/CurrencyController.scala" afterPath="$PROJECT_DIR$/src/me/currencies/model/CurrencyController.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala" afterPath="$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/CurrencyManagerTest.scala" afterPath="$PROJECT_DIR$/tests/CurrencyManagerTest.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/model/Log4j.scala" afterPath="$PROJECT_DIR$/src/me/currencies/model/Log4j.scala" />
+    <list default="true" id="c4d2eaf3-8324-4e13-8f17-dfb157cbf852" name="Default" comment="Add documentation to the model">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Currency.iws" />
@@ -125,8 +118,10 @@
         <entry file="file://$PROJECT_DIR$/src/me/currencies/App.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -766,7 +761,11 @@
       <created>1409920814431</created>
       <updated>1409920814431</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add documentation to the model">
+      <created>1409922555723</created>
+      <updated>1409922555723</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -845,7 +844,8 @@
     </option>
     <MESSAGE value="remove not needed code from ui" />
     <MESSAGE value="Add Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Tests" />
+    <MESSAGE value="Add documentation to the model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add documentation to the model" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1238,8 +1238,10 @@
     <entry file="file://$PROJECT_DIR$/src/me/currencies/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
