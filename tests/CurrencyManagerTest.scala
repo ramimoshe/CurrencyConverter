@@ -1,14 +1,12 @@
-import me.currencies.model.{CurrencyManager, CurrencyController, LogHelper}
-import org.junit.Assert._
-import org.junit.Assert.assertEquals
 import me.currencies.model._
-import scala.collection.JavaConversions
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 /**
- * Created by Administrator on 04/09/2014.
+ * Currency Manager Tests
  */
 class CurrencyManagerTest {
+
   @Test def convert_UsdToEur_Success {
 
     val expectedResult = 3.8653660628148776
@@ -17,5 +15,14 @@ class CurrencyManagerTest {
     val result: Double = cm.convert(5, "USD", "EUR")
 
     assertEquals(expectedResult, result, 0)
+  }
+
+  @Test(expected = classOf[IllegalArgumentException])
+  def convert_UsdToXXX_ThrowBadInputException {
+
+    val logger: LogHelper = new LogHelper
+    val cm: CurrencyController = new CurrencyManager(logger, false, "CURRENCIES_TEST.xml")
+    val result: Double = cm.convert(5, "USD", "XXX")
+
   }
 }
