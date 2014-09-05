@@ -7,7 +7,8 @@ import org.junit.Test
  */
 class CurrencyManagerTest {
 
-  @Test def convert_UsdToEur_Success {
+  @Test
+  def convert_UsdToEur_Success() {
 
     val expectedResult = 3.8653660628148776
     val logger: LogHelper = new LogHelper
@@ -18,7 +19,7 @@ class CurrencyManagerTest {
   }
 
   @Test(expected = classOf[IllegalArgumentException])
-  def convert_UsdToXXX_ThrowBadInputException {
+  def convert_UsdToXXX_ThrowBadInputException() {
 
     val logger: LogHelper = new LogHelper
     val cm: CurrencyController = new CurrencyManager(logger, false, "CURRENCIES_TEST.xml")
