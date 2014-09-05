@@ -1,0 +1,198 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>model - Currency documentation - me.currencies.model</title>
+          <meta name="description" content="model - Currency documentation - me.currencies.model" />
+          <meta name="keywords" content="model Currency documentation me.currencies.model" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'me.currencies.model.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="me">me</a>.<a href="../package.html" class="extype" name="me.currencies">currencies</a></p>
+        <h1>model</h1> <span class="permalink">
+      <a href="../../../index.html#me.currencies.model.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">model</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="me.currencies.model.Currency" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CurrencyextendsAnyRef"></a>
+      <a id="Currency:Currency"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Currency.html"><span class="name">Currency</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#me.currencies.model.package@CurrencyextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><pre>
+ Currency Definition <pre/>
+@param name the name of the currency
+@param unit the unit of the currency
+@param currencyCode the code of the currency
+@param country the country of the currency
+@param rate the rate of the currency
+@param change the change of the currency
+ </pre></p><div class="fullcomment"><div class="comment cmt"><p><pre>
+ Currency Definition <pre/>
+@param name the name of the currency
+@param unit the unit of the currency
+@param currencyCode the code of the currency
+@param country the country of the currency
+@param rate the rate of the currency
+@param change the change of the currency
+</p></div></div>
+    </li><li name="me.currencies.model.CurrencyController" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CurrencyControllerextendsAnyRef"></a>
+      <a id="CurrencyController:CurrencyController"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CurrencyController.html"><span class="name">CurrencyController</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#me.currencies.model.package@CurrencyControllerextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Currency Controller - responsible to negotiate between UI and Model
+</p>
+    </li><li name="me.currencies.model.CurrencyManager" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CurrencyManagerextendsCurrencyController"></a>
+      <a id="CurrencyManager:CurrencyManager"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CurrencyManager.html"><span class="name">CurrencyManager</span></a><span class="result"> extends <a href="CurrencyController.html" class="extype" name="me.currencies.model.CurrencyController">CurrencyController</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#me.currencies.model.package@CurrencyManagerextendsCurrencyController" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">* 
+<pre>
+ Currency Manager - manage all currencies data and contains conversions functions <pre/>
+@param logger logger
+@param autoSyncData indicates whether to start sync data from server automatically or not
+@param localFilePath full path or relative path to save currency data
+</pre></p><div class="fullcomment"><div class="comment cmt"><p>* 
+<pre>
+ Currency Manager - manage all currencies data and contains conversions functions <pre/>
+@param logger logger
+@param autoSyncData indicates whether to start sync data from server automatically or not
+@param localFilePath full path or relative path to save currency data
+</p></div></div>
+    </li><li name="me.currencies.model.LogHelper" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LogHelperextendsAnyRef"></a>
+      <a id="LogHelper:LogHelper"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LogHelper.html"><span class="name">LogHelper</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#me.currencies.model.package@LogHelperextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
