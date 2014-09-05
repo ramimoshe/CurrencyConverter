@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4d2eaf3-8324-4e13-8f17-dfb157cbf852" name="Default" comment="Add documentation to the model">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala" afterPath="$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Currency.iws" />
@@ -774,7 +773,11 @@
       <created>1409923246981</created>
       <updated>1409923246981</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add documentation to the model">
+      <created>1409923348160</created>
+      <updated>1409923348160</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
