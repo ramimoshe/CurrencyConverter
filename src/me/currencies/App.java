@@ -1,13 +1,13 @@
 package me.currencies;
 
+import me.currencies.model.CurrencyController;
+import me.currencies.model.CurrencyManager;
+import me.currencies.model.LogHelper;
+import me.currencies.ui.CurrencyGui;
+
 import java.awt.*;
 
-import me.currencies.model.*;
-import me.currencies.ui.*;
 
-/**
- * Created by user on 30/08/2014.
- */
 public class App {
     public static void main(String[] args) {
 

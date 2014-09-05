@@ -3,9 +3,10 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 /**
- * Created by Administrator on 04/09/2014.
+ * Currency Manager Tests
  */
 class CurrencyManagerTest {
+
   @Test def convert_UsdToEur_Success {
 
     val expectedResult = 3.8653660628148776
@@ -16,7 +17,7 @@ class CurrencyManagerTest {
     assertEquals(expectedResult, result, 0)
   }
 
-  @Test(expected = classOf[BadInputException])
+  @Test(expected = classOf[IllegalArgumentException])
   def convert_UsdToXXX_ThrowBadInputException {
 
     val logger: LogHelper = new LogHelper
