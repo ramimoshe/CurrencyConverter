@@ -1,17 +1,21 @@
-/**
- * Created by user on 23/08/2014.
- */
 
 package me.currencies.model
 
-//imports
 import java.io._
+import java.util.NoSuchElementException
+
 import org.xml.sax.SAXParseException
 
 import scala.collection.Map
 import scala.io.Source.fromURL
 import scala.xml.XML;
 
+/**
+ * * <pre> Currency Manager - manage all currencies data and contains conversions functions <pre/>
+ * @param logger logger
+ * @param autoSyncData indicates whether to start sync data from server automatically or not
+ * @param localFilePath full path or relative path to save currency data
+ */
 class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: String) extends CurrencyController {
   //defining variables
   private final val url: String = "http://www.boi.org.il/currency.xml"
@@ -19,31 +23,35 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
   private var lastUpdate: String = ""
 
   //adding NIS to Currency map
-  currencies += (("NIS") -> new Currency("Shekel", 1, "NIS", "ISR", 1, 1));
-
+  currencies += (("NIS") -> new Currency("Shekel", 1, "NIS", "ISR", 1, 1))
 
   //update local currency file
-  updateCurrencyXmlFile(url);
+  updateCurrencyXmlFile(url)
 
   //update local memory from local file
-  updateLocalCurrencies();
+  updateLocalCurrencies()
 
   //starting new Thread to update local file
   new Thread(new Runnable {
     override def run(): Unit = {
       while (true) {
-        Thread.sleep(5000);
-        updateCurrencyXmlFile(url);
-        updateLocalCurrencies();
+        Thread.sleep(5000)
+        updateCurrencyXmlFile(url)
+        updateLocalCurrencies()
       }
     }
-  }).start();
+  }).start()
 
-  //
+  //---------------------
   //function Defenition
-  //
+  //---------------------
+
 
   //update local currency file
+  /**
+   * <pre> Update the local xml file from the url param <pre/>
+   * @param url the url of the xml file
+   */
   def updateCurrencyXmlFile(url: String): Unit = {
 
     if (autoSyncData == false)
@@ -51,7 +59,7 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
     //get request
     try {
       logger.application.info("Sending get request to " + url)
-      val result = fromURL(url).mkString;
+      val result = fromURL(url).mkString
 
       //overwrite Currencies file
       val writer = new PrintWriter(new File(localFilePath))
@@ -70,22 +78,37 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
     }
   }
 
-  //convert coins
+  /**
+   * <pre> convert coins <pre/>
+   * @param amount amount
+   * @param from from currency name
+   * @param to to currency name
+   * @return the result of the conversion
+   */
   def convert(amount: Double, from: String, to: String): Double = {
-    currencies(from).m_unit * currencies(from).m_rate / currencies(to).m_unit / currencies(to).m_rate * amount;
+    try {
+      currencies(from).m_unit * currencies(from).m_rate / currencies(to).m_unit / currencies(to).m_rate * amount
+    } catch {
+      case ex: NoSuchElementException => {
+        logger.application.error("Bad Input")
+        throw new IllegalArgumentException("Bad Input")
+      }
+    }
   }
 
-  //loads local xml file to memory (Map collection)
+  /**
+   * <pre> loads local xml file to memory (Map collection) <pre/>
+   */
   def updateLocalCurrencies() = {
-    logger.application.info("Update local memory for currencies");
+    logger.application.info("Update local memory for currencies")
 
     val xml = XML.loadFile("CURRENCIES.XML");
     val currenciesRaw = (xml \ "CURRENCY").toArray
 
     currencies = Map[String, Currency]()
 
-    lastUpdate = (xml \ "LAST_UPDATE").text;
-
+    lastUpdate = (xml \ "LAST_UPDATE").text
+    // loop on all records and insert the data to the currencies map variable
     for (item <- currenciesRaw) {
       var currency = new Currency(
         ((item) \ "NAME").text,
@@ -95,22 +118,31 @@ class CurrencyManager(logger:LogHelper, autoSyncData: Boolean, localFilePath: St
         ((item) \ "RATE").text.toDouble,
         ((item) \ "CHANGE").text.toDouble
       )
-      currencies += (((item \ "CURRENCYCODE").text) -> currency);
+      currencies += (((item \ "CURRENCYCODE").text) -> currency)
     }
   }
 
+  /**
+   * get currencies details
+   * @return currencies details
+   */
   def getCurrencies(): Map[String, Currency] = {
-    currencies;
+    currencies
   }
 
+  /**
+   * get currencies names list
+   * @return list of currencies names
+   */
   def getCurrenciesNames(): Array[String] = {
-    currencies.keys.toArray;
+    currencies.keys.toArray
   }
 
+  /**
+   * get the last update date of the model
+   * @return last update date
+   */
   def getLastUpdate() : String = {
     lastUpdate
   }
-
 }
-
-
