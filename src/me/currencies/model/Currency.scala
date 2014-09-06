@@ -10,7 +10,7 @@ package me.currencies.model
  * @param rate the rate of the currency
  * @param change the change of the currency
  */
-class Currency(name : String ,unit : Int , currencyCode : String , country : String ,rate : Double ,change : Double){
+class Currency(name: String, unit: Int, currencyCode: String, country: String, rate: Double, change: Double) {
 
   private val m_name = name
   private val m_unit = unit
@@ -42,15 +42,6 @@ class Currency(name : String ,unit : Int , currencyCode : String , country : Str
   def getChange: Double = {
     m_change
   }
-
-
-
-
-
-
-
-
-
 
 }
 
