@@ -1,19 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="2" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d2eaf3-8324-4e13-8f17-dfb157cbf852" name="Default" comment="update code according to the guidelines">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/currencies/common/CommonVariables.java" />
-      <change type="MOVED" beforePath="C:\Tools\IntellijWorkspace\CurrencyConverter\src\me\currencies\model\Log4j.scala" afterPath="$PROJECT_DIR$/src/me/currencies/model/CurrencyLogger.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/me/currencies/App.html" afterPath="$PROJECT_DIR$/docs/java/me/currencies/App.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/me/currencies/class-use/App.html" afterPath="$PROJECT_DIR$/docs/java/me/currencies/class-use/App.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/App.java" afterPath="$PROJECT_DIR$/src/me/currencies/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/model/Currency.scala" afterPath="$PROJECT_DIR$/src/me/currencies/model/Currency.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/model/CurrencyController.scala" afterPath="$PROJECT_DIR$/src/me/currencies/model/CurrencyController.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/me/currencies/ui/CurrencyGui.html" afterPath="$PROJECT_DIR$/docs/java/me/currencies/ui/CurrencyGui.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/me/currencies/ui/class-use/CurrencyGui.html" afterPath="$PROJECT_DIR$/docs/java/me/currencies/ui/class-use/CurrencyGui.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/ui/CurrencyGui.java" afterPath="$PROJECT_DIR$/src/me/currencies/ui/CurrencyGui.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/model/CurrencyLogger.scala" afterPath="$PROJECT_DIR$/src/me/currencies/model/CurrencyLogger.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala" afterPath="$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/CurrencyManagerTest.scala" afterPath="$PROJECT_DIR$/tests/CurrencyManagerTest.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/model/InvalidCurrencyException.java" afterPath="$PROJECT_DIR$/src/me/currencies/model/InvalidCurrencyException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Scala/me/currencies/model/LogHelper.html" afterPath="$PROJECT_DIR$/docs/Scala/me/currencies/model/LogHelper.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/highlighting.xml" afterPath="$PROJECT_DIR$/.idea/highlighting.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Scala/index.html" afterPath="$PROJECT_DIR$/docs/Scala/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/allclasses-frame.html" afterPath="$PROJECT_DIR$/docs/java/allclasses-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/allclasses-noframe.html" afterPath="$PROJECT_DIR$/docs/java/allclasses-noframe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/constant-values.html" afterPath="$PROJECT_DIR$/docs/java/constant-values.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/deprecated-list.html" afterPath="$PROJECT_DIR$/docs/java/deprecated-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/help-doc.html" afterPath="$PROJECT_DIR$/docs/java/help-doc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/index-files/index-1.html" afterPath="$PROJECT_DIR$/docs/java/index-files/index-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/index-files/index-2.html" afterPath="$PROJECT_DIR$/docs/java/index-files/index-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/index-files/index-3.html" afterPath="$PROJECT_DIR$/docs/java/index-files/index-3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/index-files/index-4.html" afterPath="$PROJECT_DIR$/docs/java/index-files/index-4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/index-files/index-5.html" afterPath="$PROJECT_DIR$/docs/java/index-files/index-5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/index-files/index-6.html" afterPath="$PROJECT_DIR$/docs/java/index-files/index-6.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/index-files/index-7.html" afterPath="$PROJECT_DIR$/docs/java/index-files/index-7.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/index-files/index-8.html" afterPath="$PROJECT_DIR$/docs/java/index-files/index-8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/index-files/index-9.html" afterPath="$PROJECT_DIR$/docs/java/index-files/index-9.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/index.html" afterPath="$PROJECT_DIR$/docs/java/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/overview-frame.html" afterPath="$PROJECT_DIR$/docs/java/overview-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/overview-summary.html" afterPath="$PROJECT_DIR$/docs/java/overview-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/overview-tree.html" afterPath="$PROJECT_DIR$/docs/java/overview-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/me/currencies/package-frame.html" afterPath="$PROJECT_DIR$/docs/java/me/currencies/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/me/currencies/ui/package-frame.html" afterPath="$PROJECT_DIR$/docs/java/me/currencies/ui/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/package-list" afterPath="$PROJECT_DIR$/docs/java/package-list" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/me/currencies/package-summary.html" afterPath="$PROJECT_DIR$/docs/java/me/currencies/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/me/currencies/ui/package-summary.html" afterPath="$PROJECT_DIR$/docs/java/me/currencies/ui/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/me/currencies/package-tree.html" afterPath="$PROJECT_DIR$/docs/java/me/currencies/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/me/currencies/ui/package-tree.html" afterPath="$PROJECT_DIR$/docs/java/me/currencies/ui/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/me/currencies/package-use.html" afterPath="$PROJECT_DIR$/docs/java/me/currencies/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/me/currencies/ui/package-use.html" afterPath="$PROJECT_DIR$/docs/java/me/currencies/ui/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/java/serialized-form.html" afterPath="$PROJECT_DIR$/docs/java/serialized-form.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Currency.iws" />
@@ -45,8 +74,8 @@
       <file leaf-file-name="Currency.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/currencies/model/Currency.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="805" max-vertical-offset="1326">
-              <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="1326">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -55,12 +84,12 @@
       <file leaf-file-name="CurrencyManager.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1464" max-vertical-offset="2720">
-              <caret line="97" column="69" selection-start-line="97" selection-start-column="69" selection-end-line="97" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2112" max-vertical-offset="2805">
+              <caret line="132" column="42" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="42" />
               <folding>
                 <element signature="e#30#46#0" expanded="true" />
-                <element signature="e#1348#1352#0" expanded="true" />
-                <element signature="e#2098#2102#0" expanded="true" />
+                <element signature="e#1350#1354#0" expanded="true" />
+                <element signature="e#2071#2075#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,21 +118,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogHelper.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LogHelper.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/Scala/me/currencies/model/LogHelper.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3325527" vertical-offset="487" max-vertical-offset="12682">
-              <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+            <state vertical-scroll-proportion="-5.4615383" vertical-offset="708" max-vertical-offset="12682">
+              <caret line="50" column="79" selection-start-line="50" selection-start-column="79" selection-end-line="50" selection-end-column="79" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CurrencyGui.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CurrencyGui.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/currencies/ui/CurrencyGui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1455" max-vertical-offset="5559">
-              <caret line="105" column="29" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.3726852" vertical-offset="4412" max-vertical-offset="5559">
+              <caret line="273" column="39" selection-start-line="273" selection-start-column="39" selection-end-line="273" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,8 +143,8 @@
       <file leaf-file-name="CurrencyLogger.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/currencies/model/CurrencyLogger.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-              <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="561">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -124,8 +153,8 @@
       <file leaf-file-name="CurrencyController.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/currencies/model/CurrencyController.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="227" max-vertical-offset="748">
-              <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="748">
+              <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -134,11 +163,11 @@
       <file leaf-file-name="App.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/currencies/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="799">
-              <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="799">
+              <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
               <folding>
-                <element signature="e#869#1225#0" expanded="true" />
-                <element signature="e#1214#1215#0" expanded="true" />
+                <element signature="e#870#1232#0" expanded="true" />
+                <element signature="e#1221#1222#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -148,7 +177,7 @@
         <entry file="file://$PROJECT_DIR$/src/me/currencies/common/CommonVariables.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="53" max-vertical-offset="527">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
               <folding>
                 <element signature="e#354#355#0" expanded="true" />
                 <element signature="e#386#387#0" expanded="true" />
@@ -198,14 +227,16 @@
         <option value="$PROJECT_DIR$/src/me/currencies/model/InvalidCurrencyException.java" />
         <option value="$PROJECT_DIR$/src/me/currencies/model/AutoUpdater.scala" />
         <option value="$PROJECT_DIR$/src/me/currencies/model/Common.scala" />
-        <option value="$PROJECT_DIR$/src/me/currencies/ui/CurrencyGui.java" />
         <option value="$PROJECT_DIR$/src/me/currencies/model/CommonVariables.java" />
-        <option value="$PROJECT_DIR$/src/me/currencies/model/CurrencyController.scala" />
         <option value="$PROJECT_DIR$/src/me/currencies/common/CommonVariables.java" />
         <option value="$PROJECT_DIR$/src/me/currencies/model/Log4j.scala" />
-        <option value="$PROJECT_DIR$/src/me/currencies/App.java" />
         <option value="$PROJECT_DIR$/src/me/currencies/model/Currency.scala" />
+        <option value="$PROJECT_DIR$/docs/Scala/me/currencies/model/LogHelper.html" />
+        <option value="$PROJECT_DIR$/src/me/currencies/model/CurrencyLogger.scala" />
+        <option value="$PROJECT_DIR$/src/me/currencies/model/CurrencyController.scala" />
         <option value="$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala" />
+        <option value="$PROJECT_DIR$/src/me/currencies/App.java" />
+        <option value="$PROJECT_DIR$/src/me/currencies/ui/CurrencyGui.java" />
       </list>
     </option>
   </component>
@@ -286,90 +317,6 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Currency" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CurrencyConverter" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="currencies" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Currency" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CurrencyConverter" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="currencies" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Currency" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CurrencyConverter" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="currencies" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Currency" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CurrencyConverter" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="currencies" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -390,7 +337,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ScalaDoc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/Scala" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -847,7 +794,7 @@
       <workItem from="1409925950786" duration="981000" />
       <workItem from="1409941132552" duration="16000" />
       <workItem from="1409941231974" duration="8725000" />
-      <workItem from="1410015860173" duration="14482000" />
+      <workItem from="1410015860173" duration="16252000" />
     </task>
     <task id="LOCAL-00001" summary="remove not needed code from ui">
       <created>1409915950716</created>
@@ -913,11 +860,15 @@
       <created>1410014737228</created>
       <updated>1410014737228</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update code according to the guidelines">
+      <created>1410033631555</created>
+      <updated>1410033631555</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93747000" />
+    <option name="totallyTimeSpent" value="95517000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -941,13 +892,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3956466" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -956,20 +908,19 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25417203" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32841823" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32348993" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32348993" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24935733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="281" y="235" width="388" height="496" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20822622" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3342282" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20822622" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3342282" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -1056,8 +1007,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="595">
           <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
           <folding>
-            <element signature="e#869#1225#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
+            <element signature="e#870#1232#0" expanded="true" />
+            <element signature="e#1221#1222#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1083,8 +1034,8 @@
           <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
           <folding>
             <element signature="e#30#46#0" expanded="true" />
-            <element signature="e#1348#1352#0" expanded="true" />
-            <element signature="e#2098#2102#0" expanded="true" />
+            <element signature="e#1350#1354#0" expanded="true" />
+            <element signature="e#2071#2075#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1102,8 +1053,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="595">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#869#1225#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
+            <element signature="e#870#1232#0" expanded="true" />
+            <element signature="e#1221#1222#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1147,8 +1098,8 @@
           <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
           <folding>
             <element signature="e#30#46#0" expanded="true" />
-            <element signature="e#1348#1352#0" expanded="true" />
-            <element signature="e#2098#2102#0" expanded="true" />
+            <element signature="e#1350#1354#0" expanded="true" />
+            <element signature="e#2071#2075#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1166,8 +1117,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="595">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#869#1225#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
+            <element signature="e#870#1232#0" expanded="true" />
+            <element signature="e#1221#1222#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1203,8 +1154,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="595">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#869#1225#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
+            <element signature="e#870#1232#0" expanded="true" />
+            <element signature="e#1221#1222#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1249,8 +1200,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="578">
           <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
           <folding>
-            <element signature="e#869#1225#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
+            <element signature="e#870#1232#0" expanded="true" />
+            <element signature="e#1221#1222#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1381,73 +1332,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/currencies/ui/CurrencyGui.java">
+    <entry file="file://$PROJECT_DIR$/src/me/currencies/model/Currency.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1455" max-vertical-offset="5559">
-          <caret line="105" column="29" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/currencies/model/CurrencyController.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="227" max-vertical-offset="748">
-          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="1326">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/currencies/common/CommonVariables.java">
+    <entry file="file://$PROJECT_DIR$/docs/Scala/me/currencies/model/LogHelper.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="53" max-vertical-offset="527">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-5.4615383" vertical-offset="708" max-vertical-offset="12682">
+          <caret line="50" column="79" selection-start-line="50" selection-start-column="79" selection-end-line="50" selection-end-column="79" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/currencies/model/CurrencyLogger.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="561">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/currencies/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="799">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding>
-            <element signature="e#869#1225#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/currencies/model/Currency.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="805" max-vertical-offset="1326">
-          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1464" max-vertical-offset="2720">
-          <caret line="97" column="69" selection-start-line="97" selection-start-column="69" selection-end-line="97" selection-end-column="69" />
-          <folding>
-            <element signature="e#30#46#0" expanded="true" />
-            <element signature="e#1348#1352#0" expanded="true" />
-            <element signature="e#2098#2102#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1462,11 +1367,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Scala/me/currencies/model/LogHelper.html">
+    <entry file="file://$PROJECT_DIR$/src/me/currencies/common/CommonVariables.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3325527" vertical-offset="487" max-vertical-offset="12682">
-          <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="53" max-vertical-offset="527">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/currencies/model/CurrencyController.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="748">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2112" max-vertical-offset="2805">
+          <caret line="132" column="42" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="42" />
+          <folding>
+            <element signature="e#30#46#0" expanded="true" />
+            <element signature="e#1350#1354#0" expanded="true" />
+            <element signature="e#2071#2075#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/currencies/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="799">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+          <folding>
+            <element signature="e#870#1232#0" expanded="true" />
+            <element signature="e#1221#1222#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/currencies/ui/CurrencyGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3726852" vertical-offset="4412" max-vertical-offset="5559">
+          <caret line="273" column="39" selection-start-line="273" selection-start-column="39" selection-end-line="273" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

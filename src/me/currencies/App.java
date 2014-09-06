@@ -20,7 +20,7 @@ public class App {
     /**
      * main function
      *
-     * @param args env argumets
+     * @param args env arguments
      */
     public static void main(String[] args) {
         /**
@@ -40,7 +40,7 @@ public class App {
                     CurrencyGui frame = new CurrencyGui(cm);
                     frame.setVisible(true);
                 } catch (Exception e) {
-                    logger.application().fatal("Cant start the App");
+                    logger.getCurrencyLogger().fatal("Cant start the App");
                     exit(1);
                 }
             }

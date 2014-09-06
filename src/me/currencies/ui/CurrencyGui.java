@@ -20,7 +20,7 @@ import java.util.Map;
  */
 public class CurrencyGui extends JFrame {
 
-    // Variable decleration
+    // Variable declaration
     /**
      * Instance of the CurrencyController in the Gui
      */

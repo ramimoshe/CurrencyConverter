@@ -1,2 +1,4 @@
 me.currencies
+me.currencies.common
+me.currencies.model
 me.currencies.ui

@@ -28,7 +28,7 @@ trait CurrencyController {
 
   /**
    * convert currency with types from getCurrenciesNames method
-   * @param amount - amout of the currency
+   * @param amount - amount of the currency
    * @param from - from currencyCode
    * @param to - to Currency Code
    * @return - amount

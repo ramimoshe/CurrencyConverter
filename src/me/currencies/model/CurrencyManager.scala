@@ -27,8 +27,10 @@ class CurrencyManager(logger: CurrencyLogger, autoSyncData: Boolean, localFilePa
 
   private final val syncInterval = Integer.parseInt(CommonVariables.SYNC_INTERVAL.toString)
   private final val url: String = CommonVariables.CURRENCY_SERVER_URL.toString
+
   //executor for the auto updater service
   private val autoUpdater: ScheduledExecutorService = Executors.newSingleThreadScheduledExecutor()
+
   // Runnable Handler that handles local cache and repo updates
   private val autoUpdateHandler = new Runnable {
     override def run(): Unit = {
@@ -36,9 +38,11 @@ class CurrencyManager(logger: CurrencyLogger, autoSyncData: Boolean, localFilePa
       updateLocalCurrencies()
     }
   }
+
   //defining variables
   private var lastUpdate: String = ""
   private var currencies: Map[String, _ <: Currency] = Map[String, Currency]()
+
   //starting new Thread to update local file
   autoUpdater.scheduleAtFixedRate(autoUpdateHandler, 5, syncInterval, TimeUnit.SECONDS)
 
@@ -52,35 +56,35 @@ class CurrencyManager(logger: CurrencyLogger, autoSyncData: Boolean, localFilePa
   //function Definition
   //---------------------
 
-  //update local currency file
 
   /**
    * <pre> Update the local xml file from the url param <pre/>
    * @param url the url of the xml file
    */
   def updateCurrencyXmlFile(url: String): Unit = {
-
+    //disables get requests from the server
     if (!autoSyncData)
       return
 
-    //get request
     try {
-      logger.application.info("Sending get request to " + url)
+      logger.getCurrencyLogger.info("Sending get request to " + url)
+      //get request
       val result = fromURL(url).mkString
 
       //XML Validation
       XML.loadString(result)
+
       //overwrite Currencies file
       val writer = new PrintWriter(new File(localFilePath))
       writer.write(result)
       writer.close()
     } catch {
       case ex: FileNotFoundException =>
-        logger.application.warn("External site not found")
+        logger.getCurrencyLogger.warn("External site not found")
       case ex: IOException =>
-        logger.application.warn("IO Exception")
+        logger.getCurrencyLogger.warn("IO Exception")
       case ex: SAXParseException =>
-        logger.application.error("Bad XML recieved from remote server, Using Local XML file")
+        logger.getCurrencyLogger.error("Bad XML received from remote server, Using Local XML file")
     }
   }
 
@@ -96,7 +100,7 @@ class CurrencyManager(logger: CurrencyLogger, autoSyncData: Boolean, localFilePa
       currencies(from).getUnit * currencies(from).getRate / currencies(to).getUnit / currencies(to).getRate * amount
     } catch {
       case ex@(_: NoSuchElementException | _: ArithmeticException) =>
-        logger.application.error("Bad Input")
+        logger.getCurrencyLogger.error("Bad Input")
         throw new InvalidCurrencyException("Bad Input")
     }
   }
@@ -105,7 +109,7 @@ class CurrencyManager(logger: CurrencyLogger, autoSyncData: Boolean, localFilePa
    * <pre> loads local xml file to memory (Map collection) <pre/>
    */
   def updateLocalCurrencies() = {
-    logger.application.info("Update local memory for currencies")
+    logger.getCurrencyLogger.info("Update local memory for currencies")
     val xml = XML.loadFile(localFilePath)
     val currenciesRaw = (xml \ "CURRENCY").toArray
 
@@ -115,6 +119,7 @@ class CurrencyManager(logger: CurrencyLogger, autoSyncData: Boolean, localFilePa
     //adding NIS to Currency map (used since NIS is not in the map and all rates refer to NIS)
     currencies += ("NIS" -> new Currency("Shekel", 1, "NIS", "Israel", 1, 1))
     lastUpdate = (xml \ "LAST_UPDATE").text
+
     // loop on all records and insert the data to the currencies map variable
     for (item <- currenciesRaw) {
       val currency = new Currency(
@@ -133,7 +138,7 @@ class CurrencyManager(logger: CurrencyLogger, autoSyncData: Boolean, localFilePa
    * get currencies details
    * @return currencies details
    */
-  override def getCurrencies(): Map[String, Currency] = {
+  override def getCurrencies: Map[String, Currency] = {
     currencies
   }
 
@@ -141,7 +146,7 @@ class CurrencyManager(logger: CurrencyLogger, autoSyncData: Boolean, localFilePa
    * get currencies names list
    * @return list of currencies names
    */
-  override def getCurrenciesNames(): Array[String] = {
+  override def getCurrenciesNames: Array[String] = {
     currencies.keys.toArray
   }
 
@@ -149,7 +154,7 @@ class CurrencyManager(logger: CurrencyLogger, autoSyncData: Boolean, localFilePa
    * get the last update date of the model
    * @return last update date
    */
-  override def getLastUpdate(): String = {
+  override def getLastUpdate: String = {
     lastUpdate
   }
 }

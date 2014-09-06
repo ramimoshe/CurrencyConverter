@@ -26,7 +26,7 @@
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ScaladocSettings">
-    <option name="outputDir" value="C:\temp\CurrencyConverter\ScalaDoc" />
+    <option name="outputDir" value="C:\Tools\IntellijWorkspace\CurrencyConverter\docs\Scala" />
     <option name="additionalFlags" value="" />
     <option name="maxHeapSize" value="" />
     <option name="docTitle" value="Currency documentation" />
