@@ -283,7 +283,7 @@ public class CurrencyGui extends JFrame {
         //gets the currency map from the model and fills the ratesTable.
         final Map<String, Currency> currencies = JavaConversions.mapAsJavaMap(cm.getCurrencies());
         for (Map.Entry<String,Currency> coin: currencies.entrySet()) {
-            defaultTableModel.addRow(new Object[]{coin.getValue().m_country(), coin.getValue().m_currencyCode(), coin.getValue().m_unit(), coin.getValue().m_rate()});
+            defaultTableModel.addRow(new Object[]{coin.getValue().getCountry(), coin.getValue().getCurrencyCode(), coin.getValue().getUnit(), coin.getValue().getRate()});
         }
     }
 

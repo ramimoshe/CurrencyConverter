@@ -80,7 +80,7 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
    * @return the result of the conversion
    */
   override def convert(amount: Double, from: String, to: String): Double = try
-    currencies(from).m_unit * currencies(from).m_rate / currencies(to).m_unit / currencies(to).m_rate * amount
+    currencies(from).getUnit() * currencies(from).getRate() / currencies(to).getUnit() / currencies(to).getRate() * amount
   catch {
     case ex: NoSuchElementException => {
       logger.application.error("Bad Input")

@@ -39,7 +39,7 @@ class Currency(name : String ,unit : Int , currencyCode : String , country : Str
     m_rate
   }
 
-  def getChange: String = {
+  def getChange: Double = {
     m_change
   }
 
