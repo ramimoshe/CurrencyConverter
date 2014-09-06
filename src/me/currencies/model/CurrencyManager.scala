@@ -56,6 +56,7 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
     try {
       logger.application.info("Sending get request to " + url)
       val result = fromURL(url).mkString
+      XML.loadString(result)
 
       //overwrite Currencies file
       val writer = new PrintWriter(new File(localFilePath))
@@ -67,7 +68,7 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
       case ex: IOException =>
         logger.application.warn("IO Exception")
       case ex: SAXParseException =>
-        logger.application.error("Bad Parsing")
+        logger.application.error("Bad XML recieved from romote server, Using Local XML file")
     }
   }
 
@@ -78,14 +79,12 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
    * @param to to currency name
    * @return the result of the conversion
    */
-  def convert(amount: Double, from: String, to: String): Double = {
-    try {
-      currencies("aaa")
-      currencies(from).m_unit * currencies(from).m_rate / currencies(to).m_unit / currencies(to).m_rate * amount
-    } catch {
-      case ex: NoSuchElementException =>
-        logger.application.error("Bad Input")
-        throw new IllegalArgumentException("Bad Input")
+  def convert(amount: Double, from: String, to: String): Double = try
+    currencies(from).m_unit * currencies(from).m_rate / currencies(to).m_unit / currencies(to).m_rate * amount
+  catch {
+    case ex: NoSuchElementException => {
+      logger.application.error("Bad Input")
+      throw new IllegalArgumentException("Bad Input")
     }
   }
 
