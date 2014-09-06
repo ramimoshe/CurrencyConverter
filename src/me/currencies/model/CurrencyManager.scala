@@ -19,8 +19,21 @@ import scala.xml.XML
 class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: String) extends CurrencyController {
   //defining variables
   private final val url: String = "http://www.boi.org.il/currency.xml"
-  private var currencies: Map[String, Currency] = Map[String, Currency]()
+  // Create a thread that updates the currencies cache evert X ms
+  private val autoUpdaterThread: Thread = new Thread(new Runnable {
+    override def run(): Unit = {
+      while (true) {
+        Thread.sleep(5000)
+        updateCurrencyXmlFile(url)
+        updateLocalCurrencies()
+      }
+    }
+  })
   private var lastUpdate: String = ""
+  private var currencies: Map[String, Currency] = Map[String, Currency]()
+
+
+  autoUpdaterThread.start()
 
   //update local currency file
   updateCurrencyXmlFile(url)
@@ -29,21 +42,13 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
   updateLocalCurrencies()
 
   //starting new Thread to update local file
-  new Thread(new Runnable {
-    override def run(): Unit = {
-      while (true) {
-        Thread.sleep(5000)
-        updateCurrencyXmlFile(url)
-        updateLocalCurrencies()
-      }
-    }
-  }).start()
 
   //---------------------
   //function Definition
   //---------------------
 
   //update local currency file
+
   /**
    * <pre> Update the local xml file from the url param <pre/>
    * @param url the url of the xml file
@@ -52,12 +57,14 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
 
     if (!autoSyncData)
       return
+
     //get request
     try {
       logger.application.info("Sending get request to " + url)
       val result = fromURL(url).mkString
-      XML.loadString(result)
 
+      //XML Validation
+      XML.loadString(result)
       //overwrite Currencies file
       val writer = new PrintWriter(new File(localFilePath))
       writer.write(result)
