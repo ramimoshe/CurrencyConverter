@@ -3,7 +3,9 @@ package me.currencies.model
 
 import java.io._
 import java.util.NoSuchElementException
+import java.util.concurrent._
 
+import me.currencies.common.CommonVariables
 import org.xml.sax.SAXParseException
 
 import scala.collection.Map
@@ -16,32 +18,35 @@ import scala.xml.XML
  * @param autoSyncData indicates whether to start sync data from server automatically or not
  * @param localFilePath full path or relative path to save currency data
  */
-class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: String) extends CurrencyController {
-  //defining variables
-  private final val url: String = "http://www.boi.org.il/currency.xml"
-  // Create a thread that updates the currencies cache evert X ms
-  private val autoUpdaterThread: Thread = new Thread(new Runnable {
+class CurrencyManager(logger: CurrencyLogger, autoSyncData: Boolean, localFilePath: String) extends CurrencyController {
+  if (logger == null)
+    throw new IllegalArgumentException("Logger missing")
+  if (localFilePath == null || localFilePath.isEmpty) {
+    throw new IllegalArgumentException("File path missing")
+  }
+
+  private final val syncInterval = Integer.parseInt(CommonVariables.SYNC_INTERVAL.toString)
+  private final val url: String = CommonVariables.CURRENCY_SERVER_URL.toString
+  //executor for the auto updater service
+  private val autoUpdater: ScheduledExecutorService = Executors.newSingleThreadScheduledExecutor()
+  // Runnable Handler that handles local cache and repo updates
+  private val autoUpdateHandler = new Runnable {
     override def run(): Unit = {
-      while (true) {
-        Thread.sleep(5000)
-        updateCurrencyXmlFile(url)
-        updateLocalCurrencies()
-      }
+      updateCurrencyXmlFile(url)
+      updateLocalCurrencies()
     }
-  })
+  }
+  //defining variables
   private var lastUpdate: String = ""
-  private var currencies: Map[String, Currency] = Map[String, Currency]()
-
-
-  autoUpdaterThread.start()
+  private var currencies: Map[String, _ <: Currency] = Map[String, Currency]()
+  //starting new Thread to update local file
+  autoUpdater.scheduleAtFixedRate(autoUpdateHandler, 5, syncInterval, TimeUnit.SECONDS)
 
   //update local currency file
   updateCurrencyXmlFile(url)
 
   //update local memory from local file
   updateLocalCurrencies()
-
-  //starting new Thread to update local file
 
   //---------------------
   //function Definition
@@ -75,7 +80,7 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
       case ex: IOException =>
         logger.application.warn("IO Exception")
       case ex: SAXParseException =>
-        logger.application.error("Bad XML recieved from romote server, Using Local XML file")
+        logger.application.error("Bad XML recieved from remote server, Using Local XML file")
     }
   }
 
@@ -86,12 +91,13 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
    * @param to to currency name
    * @return the result of the conversion
    */
-  override def convert(amount: Double, from: String, to: String): Double = try
-    currencies(from).getUnit() * currencies(from).getRate() / currencies(to).getUnit() / currencies(to).getRate() * amount
-  catch {
-    case ex: NoSuchElementException => {
-      logger.application.error("Bad Input")
-      throw new IllegalArgumentException("Bad Input")
+  override def convert(amount: Double, from: String, to: String): Double = {
+    try {
+      currencies(from).getUnit * currencies(from).getRate / currencies(to).getUnit / currencies(to).getRate * amount
+    } catch {
+      case ex@(_: NoSuchElementException | _: ArithmeticException) =>
+        logger.application.error("Bad Input")
+        throw new InvalidCurrencyException("Bad Input")
     }
   }
 
@@ -100,10 +106,10 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
    */
   def updateLocalCurrencies() = {
     logger.application.info("Update local memory for currencies")
-
-    val xml = XML.loadFile("CURRENCIES.XML")
+    val xml = XML.loadFile(localFilePath)
     val currenciesRaw = (xml \ "CURRENCY").toArray
 
+    // re - initiate the Currency cache
     currencies = Map[String, Currency]()
 
     //adding NIS to Currency map (used since NIS is not in the map and all rates refer to NIS)

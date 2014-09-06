@@ -4,11 +4,12 @@ package me.currencies.model;
 /**
  * Exception indicating that the currency value was invalid
  */
-class InvalidCurrencyException extends IllegalArgumentException {
+public class InvalidCurrencyException extends IllegalArgumentException {
     /**
      * Constructs a <tt>InvalidCurrencyException</tt> with no detail message.
      */
     public InvalidCurrencyException() {
+        super();
     }
 
     /**

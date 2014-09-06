@@ -21,11 +21,17 @@ import java.util.Map;
 public class CurrencyGui extends JFrame {
 
     // Variable decleration
+    /**
+     * Instance of the CurrencyController in the Gui
+     */
     private CurrencyController cm;
 
-    private JTabbedPane tabbedPane;
-
+    /*
+    private local Swing variables
+     */
     private JPanel contentPane;
+
+    private JTabbedPane tabbedPane;
     private JPanel converterTab;
     private JPanel toPanel;
     private JPanel ratesTab;
@@ -45,27 +51,38 @@ public class CurrencyGui extends JFrame {
 
     private JTable currenciesTable;
 
-    private JButton convertBtn;
+    private JButton convertButton;
 
     private JLabel resultLabel;
     private JLabel lastUpdatedTableLabel;
     private JLabel currencyRatesHeader;
     private JLabel currencyConverterLabel;
-    private JLabel amountLbl;
+    private JLabel amountLabel;
+    private JLabel fromLabel;
+    private JLabel toLabel;
 
+    private JScrollPane scrollPane;
+
+    /**
+     * Primary constructor
+     * creates the whole view part
+     *
+     * @param cm instance of the CurrencyController
+     */
     public CurrencyGui(CurrencyController cm) {
+        if (cm == null)
+            throw new IllegalArgumentException("Bad input, controller equals null");
         this.cm = cm;
 
         addMainWindow();
         addTabbedPanel();
-
         addConverterTab();
-
         addRatesTab();
     }
+
     /**
-    *   Configures the main Jframe and adds a content panel to the main Jframe
-    */
+     * Configures the main Jframe and adds a content panel to the main Jframe
+     */
     private void addMainWindow() {
         setResizable(false);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -74,8 +91,9 @@ public class CurrencyGui extends JFrame {
         contentPane.setLayout(new BorderLayout(0, 0));
         setContentPane(contentPane);
     }
+
     /**
-     *   Creates a tabbed pane and adds listener to that updates the ratesTable data every time the tab is selected
+     * Creates a tabbed pane and adds listener to that updates the ratesTable data every time the tab is selected
      */
     private void addTabbedPanel() {
         tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -83,11 +101,10 @@ public class CurrencyGui extends JFrame {
 
         // Listener event for refreshing the ratesTable every time the ratesTable paned is selected
         tabbedPane.addChangeListener(new ChangeListener() {
-            @Override
             public void stateChanged(ChangeEvent e) {
                 JTabbedPane sourceTabbedPane = (JTabbedPane) e.getSource();
                 int indexTabSelected = sourceTabbedPane.getSelectedIndex();
-                if (indexTabSelected == 1 ) {
+                if (indexTabSelected == 1) {
                     lastUpdatedTableLabel.setText(cm.getLastUpdate());
                     fillTableData(currenciesTable.getModel());
                 }
@@ -123,7 +140,6 @@ public class CurrencyGui extends JFrame {
         currencyConverterLabel = new JLabel("Currency Converter");
         currencyConverterLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
         headPanelConverter.add(currencyConverterLabel);
-
         converterTab.add(headPanelConverter, BorderLayout.NORTH);
     }
 
@@ -135,8 +151,9 @@ public class CurrencyGui extends JFrame {
     private void addConvertButtonPanel() {
         southPanel = new JPanel();
         southPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        convertBtn = new JButton("Convert");
-        convertBtn.addActionListener(new ActionListener() {
+        convertButton = new JButton("Convert");
+        //add listener to the convert button that run the convert function from the controller
+        convertButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String from = fromComboBox.getSelectedItem().toString();
                 String to = toComboBox.getSelectedItem().toString();
@@ -149,33 +166,35 @@ public class CurrencyGui extends JFrame {
                 }
             }
         });
-        southPanel.add(convertBtn);
+        southPanel.add(convertButton);
         converterTab.add(southPanel, BorderLayout.SOUTH);
     }
+
     /**
-    *   Creates the "From" of the converter panel
-     *   <p>add s "from" combo box for choosing the currency type</p>
+     * Creates the "From" of the converter panel
+     * <p>add s "from" combo box for choosing the currency type</p>
      */
     private void addFromPanel() {
         fromPanel = new JPanel();
 
-        JLabel fromLbl = new JLabel("From:    ");
-        fromPanel.add(fromLbl);
+        fromLabel = new JLabel("From:    ");
+        fromPanel.add(fromLabel);
         fromComboBox = new JComboBox<String>();
         //adding the currencies types to the combobox
         fromComboBox.setModel(new DefaultComboBoxModel<String>(cm.getCurrenciesNames()));
         fromPanel.add(fromComboBox);
         centerConverterPanel.add(fromPanel);
     }
+
     /**
-     *   Creates the "To" of the converter tab
-     *   <p>add s "from" combo box for choosing the currency type</p>
+     * Creates the "To" of the converter tab
+     * <p>add s "from" combo box for choosing the currency type</p>
      */
     private void addToPanel() {
         toPanel = new JPanel();
 
-        JLabel toLbl = new JLabel("To:        ");
-        toPanel.add(toLbl);
+        toLabel = new JLabel("To:        ");
+        toPanel.add(toLabel);
         toComboBox = new JComboBox<String>();
         //adding the currencies types to the combobox
         toComboBox.setModel(new DefaultComboBoxModel<String>(cm.getCurrenciesNames()));
@@ -185,13 +204,13 @@ public class CurrencyGui extends JFrame {
 
 
     /**
-     *   Creates the "Amount" panel of the converter tab
-     *   <p>adds a text field to the amount</p>
+     * Creates the "Amount" panel of the converter tab
+     * <p>adds a text field to the amount</p>
      */
     private void addAmountPanel() {
         amountPanel = new JPanel();
-        amountLbl = new JLabel("Amount: ");
-        amountPanel.add(amountLbl);
+        amountLabel = new JLabel("Amount: ");
+        amountPanel.add(amountLabel);
 
         amountTextField = new JTextField();
         amountPanel.add(amountTextField);
@@ -199,9 +218,9 @@ public class CurrencyGui extends JFrame {
 
         centerConverterPanel.add(amountPanel);
     }
+
     /**
-     *   Creates the Rates tab of the Rates ratesTable tab
-     *
+     * Creates the Rates tab of the Rates ratesTable tab
      */
     private void addRatesTab() {
         ratesTab = new JPanel();
@@ -219,7 +238,7 @@ public class CurrencyGui extends JFrame {
      */
     private void addRatesTableScrollPanel() {
         currenciesTable = createRatesTable();
-        JScrollPane scrollPane = new JScrollPane(currenciesTable);
+        scrollPane = new JScrollPane(currenciesTable);
         ratesTab.add(scrollPane, BorderLayout.CENTER);
     }
 
@@ -247,6 +266,11 @@ public class CurrencyGui extends JFrame {
         headPanelRates.add(currencyRatesHeader);
     }
 
+    /**
+     * Creates an instance of JTable
+     *
+     * @return instance if the Jtable
+     */
     private JTable createRatesTable() {
         currenciesTable = new JTable();
         currenciesTable.setEnabled(false);
@@ -258,12 +282,13 @@ public class CurrencyGui extends JFrame {
 
     /**
      * sets headers to rates table
+     *
      * @param table the table edited
      */
     private void fillTableHeader(JTable table) {
         table.setModel(new DefaultTableModel(
-                new Object[][] {},
-                new String[] {
+                new Object[][]{},
+                new String[]{
                         "Country", "Currency", "Unit", "Rate"
                 }
         ));
@@ -271,10 +296,11 @@ public class CurrencyGui extends JFrame {
 
     /**
      * refills the rates table
+     *
      * @param tableModel the table edited
      */
     private void fillTableData(TableModel tableModel) {
-        DefaultTableModel defaultTableModel = (DefaultTableModel)tableModel;
+        DefaultTableModel defaultTableModel = (DefaultTableModel) tableModel;
         int rowCount = defaultTableModel.getRowCount();
         //Remove rows one by one from the end of the currenciesTable
         for (int i = rowCount - 1; i >= 0; i--) {
@@ -282,7 +308,7 @@ public class CurrencyGui extends JFrame {
         }
         //gets the currency map from the model and fills the ratesTable.
         final Map<String, Currency> currencies = JavaConversions.mapAsJavaMap(cm.getCurrencies());
-        for (Map.Entry<String,Currency> coin: currencies.entrySet()) {
+        for (Map.Entry<String, Currency> coin : currencies.entrySet()) {
             defaultTableModel.addRow(new Object[]{coin.getValue().getCountry(), coin.getValue().getCurrencyCode(), coin.getValue().getUnit(), coin.getValue().getRate()});
         }
     }

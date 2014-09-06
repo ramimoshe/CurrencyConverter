@@ -19,26 +19,51 @@ class Currency(name: String, unit: Int, currencyCode: String, country: String, r
   private val m_rate = rate
   private val m_change = change
 
-  def getName(): String = {
+  /**
+   * get Name
+   * @return currency name
+   */
+  def getName: String = {
     m_name
   }
 
-  def getUnit(): Int = {
+  /**
+   * get unit
+   * @return currency unit
+   */
+  def getUnit: Int = {
     m_unit
   }
 
-  def getCurrencyCode(): String = {
+  /**
+   * get currency code
+   * @return - currency code
+   */
+  def getCurrencyCode: String = {
     m_currencyCode
   }
 
-  def getCountry(): String = {
+  /**
+   * get country
+   * @return country of the currency
+   */
+  def getCountry: String = {
     m_country
   }
 
-  def getRate(): Double = {
+
+  /**
+   * get rate
+   * @return rate - to NIS
+   */
+  def getRate: Double = {
     m_rate
   }
 
+  /**
+   * returns the change rate
+   * @return change rate
+   */
   def getChange: Double = {
     m_change
   }
