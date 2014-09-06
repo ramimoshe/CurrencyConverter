@@ -12,12 +12,45 @@ package me.currencies.model
  */
 class Currency(name : String ,unit : Int , currencyCode : String , country : String ,rate : Double ,change : Double){
 
-  var m_name = name
-  var m_unit = unit
-  var m_currencyCode = currencyCode
-  var m_country = country
-  var m_rate = rate
-  var m_change = change
+  private val m_name = name
+  private val m_unit = unit
+  private val m_currencyCode = currencyCode
+  private val m_country = country
+  private val m_rate = rate
+  private val m_change = change
+
+  def getName(): String = {
+    m_name
+  }
+
+  def getUnit(): Int = {
+    m_unit
+  }
+
+  def getCurrencyCode(): String = {
+    m_currencyCode
+  }
+
+  def getCountry(): String = {
+    m_country
+  }
+
+  def getRate(): Double = {
+    m_rate
+  }
+
+  def getChange: String = {
+    m_change
+  }
+
+
+
+
+
+
+
+
+
 
 }
 
