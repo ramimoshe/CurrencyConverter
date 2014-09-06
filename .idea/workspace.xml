@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4d2eaf3-8324-4e13-8f17-dfb157cbf852" name="Default" comment="">
+    <list default="true" id="c4d2eaf3-8324-4e13-8f17-dfb157cbf852" name="Default" comment="Changes">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CURRENCIES.xml" afterPath="$PROJECT_DIR$/CURRENCIES.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala" afterPath="$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -34,13 +35,23 @@
       <file leaf-file-name="CurrencyManager.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3325792" vertical-offset="1281" max-vertical-offset="2499">
-              <caret line="84" column="40" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.46153846" vertical-offset="1173" max-vertical-offset="2499">
+              <caret line="81" column="11" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
               <folding>
                 <element signature="e#30#46#0" expanded="true" />
                 <element signature="e#1052#1056#0" expanded="true" />
                 <element signature="e#1469#1473#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CurrencyController.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/currencies/model/CurrencyController.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -632,7 +643,7 @@
       <workItem from="1409907809725" duration="7100000" />
       <workItem from="1409925950786" duration="981000" />
       <workItem from="1409941132552" duration="16000" />
-      <workItem from="1409941231974" duration="4190000" />
+      <workItem from="1409941231974" duration="4420000" />
     </task>
     <task id="LOCAL-00001" summary="remove not needed code from ui">
       <created>1409915950716</created>
@@ -674,11 +685,15 @@
       <created>1409941275000</created>
       <updated>1409941275000</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Changes">
+      <created>1409992636718</created>
+      <updated>1409992636718</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74730000" />
+    <option name="totallyTimeSpent" value="74960000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -757,7 +772,8 @@
     <MESSAGE value="fix israel missing data" />
     <MESSAGE value="add docs (scala, java)" />
     <MESSAGE value="refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1141,14 +1157,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/currencies/model/CurrencyController.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_67/src.zip!/com/sun/org/apache/xerces/internal/util/ErrorHandlerWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2713" max-vertical-offset="3570">
@@ -1181,10 +1189,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/currencies/model/CurrencyController.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/currencies/model/CurrencyManager.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3325792" vertical-offset="1281" max-vertical-offset="2499">
-          <caret line="84" column="40" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.46153846" vertical-offset="1173" max-vertical-offset="2499">
+          <caret line="81" column="11" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
           <folding>
             <element signature="e#30#46#0" expanded="true" />
             <element signature="e#1052#1056#0" expanded="true" />

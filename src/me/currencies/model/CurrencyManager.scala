@@ -79,7 +79,7 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
    * @param to to currency name
    * @return the result of the conversion
    */
-  def convert(amount: Double, from: String, to: String): Double = try
+  override def convert(amount: Double, from: String, to: String): Double = try
     currencies(from).m_unit * currencies(from).m_rate / currencies(to).m_unit / currencies(to).m_rate * amount
   catch {
     case ex: NoSuchElementException => {
@@ -98,9 +98,9 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
     val currenciesRaw = (xml \ "CURRENCY").toArray
 
     currencies = Map[String, Currency]()
-    //adding NIS to Currency map
-    currencies += ("NIS" -> new Currency("Shekel", 1, "NIS", "Israel", 1, 1))
 
+    //adding NIS to Currency map (used since NIS is not in the map and all rates refer to NIS)
+    currencies += ("NIS" -> new Currency("Shekel", 1, "NIS", "Israel", 1, 1))
     lastUpdate = (xml \ "LAST_UPDATE").text
     // loop on all records and insert the data to the currencies map variable
     for (item <- currenciesRaw) {
@@ -120,7 +120,7 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
    * get currencies details
    * @return currencies details
    */
-  def getCurrencies(): Map[String, Currency] = {
+  override def getCurrencies(): Map[String, Currency] = {
     currencies
   }
 
@@ -128,7 +128,7 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
    * get currencies names list
    * @return list of currencies names
    */
-  def getCurrenciesNames(): Array[String] = {
+  override def getCurrenciesNames(): Array[String] = {
     currencies.keys.toArray
   }
 
@@ -136,7 +136,7 @@ class CurrencyManager(logger: LogHelper, autoSyncData: Boolean, localFilePath: S
    * get the last update date of the model
    * @return last update date
    */
-  def getLastUpdate() : String = {
+  override def getLastUpdate(): String = {
     lastUpdate
   }
 }
